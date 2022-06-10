@@ -10,7 +10,47 @@ import pandas as pd
 
 #%% Input format handling
 
+def csv_file_to_location_info(csv_file, location_column_name='name', lat_column_name='lat', lon_column_name='lon'):
+    #Basic checks
+    from os.path import exists
+    import sys
 
+    if not exists(csv_file):
+        sys.exit("File: ", csv_file, ' Not found! Abord')
+    
+    
+    try: 
+        locations_df = pd.read_csv(csv_file)
+    except:
+        sys.exit('could not read this file: '+ csv_file + ' Are you shure this is a .csv file? Abord')
+    
+    
+    if not location_column_name in locations_df:
+        sys.exit(location_column_name + ' not found in csv file (' +
+                 str(list(locations_df.columns)) + ')! Abord')
+    
+    if not lat_column_name in locations_df:
+        sys.exit(lat_column_name + ' not found in csv file (' +
+                 str(list(locations_df.columns)) + ')! Abord')
+    
+    if not lon_column_name in locations_df:
+        sys.exit(lon_column_name + ' not found in csv file (' +
+                 str(list(locations_df.columns)) + ')! Abord')
+    
+    
+    locations_df = locations_df.rename(columns={location_column_name: 'location',
+                                                lat_column_name: 'lat',
+                                                lon_column_name: 'lon'})
+    
+    locations_df[['lat', 'lon']] = locations_df[['lat', 'lon']].apply(pd.to_numeric, errors='coerce') 
+    
+    locations_df = locations_df.drop_duplicates(subset='location') #keep only unique location identifiers
+    
+    #to nested dictionary
+    locations_dict = dict(zip(locations_df['location'], zip(locations_df['lat'], locations_df['lon'])))
+    locations_dict = {key: {'lat': value[0], 'lon': value[1]} for key, value in locations_dict.items()}
+    
+    return locations_dict
 
 
 
@@ -18,7 +58,7 @@ import pandas as pd
 
 #%% Output format handling
 
-def location_info_dict_to_csv(location_info, outputfile, lc_class_to_human_mapper):
+def location_info_dict_to_dataframe(location_info, lc_class_to_human_mapper):
     combined_df = pd.DataFrame()    
     for location in location_info:
         

@@ -14,13 +14,11 @@ sys.path.append(wdir)
 import geo_maps_config
 import gis_functions
 import formatting_functions
+import figure_creator
 
 #%% Settings
 
 buffer_list = [500, 250, 100, 50, 20]
-
-
-
 
 
 #%% IO
@@ -35,8 +33,21 @@ Location_info = {'station1':
                     # 'Novi Sad - Limanski Park': [45.239286, 19.841227]
                 }
 
+#From CSV file
+locations_file = "/home/thoverga/Downloads/all_stations_ZUE_BAS_ZHAW.csv"
 
-outputfolder = '/home/thoverga/Desktop/lc_figs_v2_run'
+# Location_info = formatting_functions.csv_file_to_location_info(csv_file=locations_file,
+#                                                                location_column_name='name',
+#                                                                lat_column_name='lat',
+#                                                                lon_column_name='lon')
+
+
+        
+
+
+    
+
+outputfolder = '/home/thoverga/Desktop/lc_figs_test_2'
 
 #%% Check input settings
 
@@ -61,28 +72,31 @@ for station in Location_info:
 #%% landcover extraction
 
 
-for station in Location_info:
-    Location_info[station]['landcover'] = {}
+for location in Location_info:
+    Location_info[location]['landcover'] = {}
     for buffer_radius in buffer_list:        
-        fractions = gis_functions.extract_landfractions_from_from_coordinate(lat=Location_info[station]['lat'],
-                                                  lon=Location_info[station]['lon'],
+        fractions = gis_functions.extract_landfractions_from_from_coordinate(lat=Location_info[location]['lat'],
+                                                  lon=Location_info[location]['lon'],
                                                   buffer_radius=buffer_radius,
                                                   raster_map_location=geo_maps_config.s2glc_settings['file'],
                                                   class_to_human_mapper=geo_maps_config.s2glc_settings['classes'])
         
         #update location info
-        Location_info[station]['landcover'][buffer_radius] = fractions
+        Location_info[location]['landcover'][buffer_radius] = fractions
 
 
-#%% make dataframe
-test = formatting_functions.location_info_dict_to_csv(location_info=Location_info,
-                                                      outputfile = 'hoi',
-                                                      lc_class_to_human_mapper = geo_maps_config.s2glc_settings['classes'])
+#%% save output
+df = formatting_functions.location_info_dict_to_dataframe(location_info=Location_info,
+                                                            lc_class_to_human_mapper = geo_maps_config.s2glc_settings['classes'])
 
+df.to_csv(os.path.join(outputfolder, 'tabular_data.csv'), index=False)
 
 
 #%% make figure
-
-
-
+for location in Location_info:
+    figure_creator.create_and_save_combined_figure(location=location,
+                                                   location_data = Location_info[location],
+                                                   outputfolder=outputfolder)
+    
+    
 
