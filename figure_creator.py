@@ -16,6 +16,9 @@ import pandas as pd
 import geopandas as gpd
 import rasterio
 
+import cv2
+from mpl_toolkits.axes_grid1.anchored_artists import AnchoredSizeBar
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 import matplotlib.pyplot as plt
 import geoplot as gplt
 import geoplot.crs as gcrs
@@ -28,7 +31,54 @@ import numpy as np
 from matplotlib.colors import ListedColormap, BoundaryNorm
 from matplotlib.lines import Line2D
 
+import contextily as cx
+    
+from matplotlib_scalebar.scalebar import ScaleBar
 
+
+
+
+# def make_basemap_plot(basemap_radius, radius_list, lat_station, lon_station, ax, lc_map_location):
+    
+    
+#     #extract coordinatesystem from the rasterfile so a buffer can be defined in meters
+#     with rasterio.open(lc_map_location) as src:    
+#         map_crs = str(src.crs)
+    
+#     #create a geopandas dataframe
+#     df = pd.DataFrame({'lat':[lat_station], 'lon':[lon_station]})
+#     gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df['lon'], df['lat']))
+#     gdf = gdf.set_crs(epsg = 4326) #inpunt are gps coordinates
+#     gdf = gdf.to_crs(map_crs)
+
+    
+#     #save station location
+#     gdf['center_point'] = gdf['geometry']
+    
+
+#     #Get extend
+#     gdf['basemap_radius'] = gdf['geometry'].buffer(float(basemap_radius), resolution=30)
+#     latlon_extent = gdf['basemap_radius'].to_crs(4326).total_bounds
+    
+
+#     #to webmercator
+#     webmercator_epsg = 3857
+#     gdf = gdf.to_crs(webmercator_epsg)
+    
+    
+    
+#     #create basemap
+#     gplt.webmap(df = gdf,extent=latlon_extent, projection=gcrs.WebMercator(), zoom = 17, ax=ax)
+    
+#     #add station point
+#     gdf['center_point'].to_crs(webmercator_epsg).plot(ax=ax, color='red')
+    
+#     #draw buffer circles
+#     for radius in radius_list:
+#         gdf['buffer_polygon'] = gdf['center_point'].buffer(float(radius), resolution=30)
+#         gdf['buffer_polygon'].to_crs(webmercator_epsg).plot(ax=ax, facecolor='none', edgecolor='black')
+
+#     return ax
 
 def make_basemap_plot(basemap_radius, radius_list, lat_station, lon_station, ax, lc_map_location):
     
@@ -36,9 +86,16 @@ def make_basemap_plot(basemap_radius, radius_list, lat_station, lon_station, ax,
     #extract coordinatesystem from the rasterfile so a buffer can be defined in meters
     with rasterio.open(lc_map_location) as src:    
         map_crs = str(src.crs)
+        # lc_map_resolution = src.transform[0]
+    
+    #init df
+    df = pd.DataFrame()
+    df['buffer_radius'] = radius_list
+    df['lat'] = lat_station
+    df['lon'] = lon_station
     
     #create a geopandas dataframe
-    df = pd.DataFrame({'lat':[lat_station], 'lon':[lon_station]})
+
     gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df['lon'], df['lat']))
     gdf = gdf.set_crs(epsg = 4326) #inpunt are gps coordinates
     gdf = gdf.to_crs(map_crs)
@@ -48,35 +105,62 @@ def make_basemap_plot(basemap_radius, radius_list, lat_station, lon_station, ax,
     gdf['center_point'] = gdf['geometry']
     
 
-    #Get extend
-    gdf['basemap_radius'] = gdf['geometry'].buffer(float(basemap_radius), resolution=30)
-    latlon_extent = gdf['basemap_radius'].to_crs(4326).total_bounds
-    
-
     #to webmercator
+    tile_provider = cx.providers.OpenStreetMap.Mapnik
     webmercator_epsg = 3857
     gdf = gdf.to_crs(webmercator_epsg)
     
     
-    
-    #create basemap
-    gplt.webmap(df = gdf,extent=latlon_extent, projection=gcrs.WebMercator(), zoom = 17, ax=ax)
-    
+
     #add station point
-    gdf['center_point'].to_crs(webmercator_epsg).plot(ax=ax, color='red')
+    gdf = gdf.set_geometry('center_point')
+    gdf = gdf.to_crs(webmercator_epsg)
+    gdf['center_point'].plot(ax=ax, color='red')
+    
     
     #draw buffer circles
-    for radius in radius_list:
-        gdf['buffer_polygon'] = gdf['center_point'].buffer(float(radius), resolution=30)
-        gdf['buffer_polygon'].to_crs(webmercator_epsg).plot(ax=ax, facecolor='none', edgecolor='black')
+    
+    gdf['buffer_polygon'] = gdf['center_point'].buffer(gdf['buffer_radius'], resolution=30)
+    gdf = gdf.set_geometry('buffer_polygon')
+    gdf = gdf.to_crs(webmercator_epsg)
+    gdf['buffer_polygon'].plot(ax=ax, facecolor='none', edgecolor='black')
 
+
+    
+    
+    #text annotation location
+    y_deviation = -10
+    gdf['buffer_radius'] = gdf['buffer_radius'].astype(str)
+    gdf['text_buffer_loc'] = gpd.points_from_xy(x=gdf['center_point'].x, y=gdf['buffer_polygon'].bounds['miny'])
+    gdf = gdf.set_geometry('text_buffer_loc')
+    gdf = gdf.to_crs(webmercator_epsg)
+    gdf['text_x'], gdf['text_y']  = gdf['text_buffer_loc'].x, gdf['text_buffer_loc'].y + y_deviation
+    
+    for _idx, row in gdf.iterrows():
+        ax.text(x=row['text_x'],
+                    y=row['text_y'],
+                    s=row['buffer_radius'],
+                    size=10,
+                    va='center', 
+                    ha='left', fontweight='bold')
+    
+    
+
+    cx.add_basemap(ax, source=tile_provider, zoom=17)
+    
+    
+    #add scalebar
+    
+    ax.add_artist(ScaleBar(1))
+    #styling
+    ax.axis('off')
+    
     return ax
 
 
 
 
-
-def plot_spatial_map_of_crop_and_buffer(raster_radius, lat, lon, map_info, ax,  buffer_radius_list=None, add_centerpoint=True):
+def plot_spatial_map_of_crop_and_buffer(raster_radius, lat, lon, map_info, ax,  buffer_radius_list=None, add_centerpoint=True, N_arrow_fig=None, add_N_arrow_and_scale=True):
    
     #extract coordinatesystem from the rasterfile
     with rasterio.open(map_info['file']) as src:    
@@ -129,15 +213,16 @@ def plot_spatial_map_of_crop_and_buffer(raster_radius, lat, lon, map_info, ax,  
         for radius in buffer_radius_list:
             radius_in_array_space = radius/lc_map_resolution
             
-            circle_center_x = (cropped_raster_array.shape[0]/2)-1.0
-            circle_center_y = (cropped_raster_array.shape[1]/2)-1.0
+            circle_center_x = (cropped_raster_array.shape[0]/2)
+            circle_center_y = (cropped_raster_array.shape[1]/2)
+        
             
             circle = plt.Circle((circle_center_x, circle_center_y), radius_in_array_space, color='black', fill=False)
             circle_list.append(circle)
             
             text_deviation = 0.5
             text = str(radius) + 'm'
-            ax.text(circle_center_x, (circle_center_y + radius_in_array_space + text_deviation), text, style='italic')
+            ax.text(circle_center_x, (circle_center_y + radius_in_array_space + text_deviation), text, fontweight='bold', size=10)
     
         #add circles to ax
         for c in circle_list:
@@ -176,6 +261,35 @@ def plot_spatial_map_of_crop_and_buffer(raster_radius, lat, lon, map_info, ax,  
     # Put a legend below current axis
     ax.legend(handles=legend_elements, loc='upper center', bbox_to_anchor=(0.5, -0.05),
               fancybox=True, shadow=True, ncol=2, prop={'size': 13})
+    
+    
+    
+    
+
+    if add_N_arrow_and_scale:
+        
+        #add north arrow
+        arrow_arr_img = plt.imread(N_arrow_fig)
+        arrow_RGB_img = cv2.cvtColor(arrow_arr_img, cv2.COLOR_BGR2RGB) #because matplotlib uses RGB format instead of BGR
+        
+        arrow_im = OffsetImage(arrow_RGB_img, zoom=.06)
+        arrow_ab = AnnotationBbox(arrow_im, (1, 0.9), xycoords='axes fraction',frameon=False, box_alignment=(0.,-0.1))
+    
+        ax.add_artist(arrow_ab)
+    
+    
+       
+        # add scalebar
+        scalebar = AnchoredSizeBar(transform=ax.transData,
+                                size=250/lc_map_resolution,
+                                label='250 m',
+                                loc='upper right', 
+                                pad=0.1,
+                                color='black',
+                                frameon=False,
+                                size_vertical=10/lc_map_resolution)
+        ax.add_artist(scalebar)    
+
     
 
     #styling
@@ -218,7 +332,7 @@ def make_stacked_barplot(ax, location_data, map_info):
 
 #%% wrappers and combiners
 
-def create_and_save_combined_figure(location, location_data, outputfolder, basemap_overshoot_factor = 1.2):
+def create_and_save_combined_figure(location, location_data, outputfolder, N_arrow_fig, basemap_overshoot_factor = 1.2):
     
     bufferlist = list(location_data['landcover'].keys())
     
@@ -245,7 +359,10 @@ def create_and_save_combined_figure(location, location_data, outputfolder, basem
                                               lon = location_data['lon'],
                                               map_info = s2glc_settings,
                                               buffer_radius_list = bufferlist,
-                                              ax = ax2)
+                                              ax = ax2,
+                                              add_centerpoint=True,
+                                              N_arrow_fig=N_arrow_fig,
+                                              add_N_arrow_and_scale=True)
     
     
     # #barplot
@@ -258,7 +375,11 @@ def create_and_save_combined_figure(location, location_data, outputfolder, basem
                                                             lat = location_data['lat'],
                                                             lon = location_data['lon'],
                                                             map_info=lcz_settings,
-                                                            ax=ax4)
+                                                            buffer_radius_list = bufferlist,
+                                                            ax=ax4,
+                                                            add_centerpoint=True,
+                                                            N_arrow_fig=N_arrow_fig,
+                                                            add_N_arrow_and_scale=True)
     
     
     # create titles

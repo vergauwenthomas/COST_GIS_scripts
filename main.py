@@ -49,6 +49,14 @@ locations_file = "/home/thoverga/Downloads/all_stations_ZUE_BAS_ZHAW.csv"
 
 outputfolder = '/home/thoverga/Desktop/lc_figs_test_2'
 
+#externalfigures
+north_arrow = os.path.join(wdir, 'external_figures', 'North-Arrow.jpg')
+
+
+
+
+
+
 #%% Check input settings
 
 #TODO check if keys are unique
@@ -96,7 +104,8 @@ df.to_csv(os.path.join(outputfolder, 'tabular_data.csv'), index=False)
 for location in Location_info:
     figure_creator.create_and_save_combined_figure(location=location,
                                                    location_data = Location_info[location],
-                                                   outputfolder=outputfolder)
+                                                   outputfolder=outputfolder,
+                                                   N_arrow_fig=north_arrow)
     
-    
+
 

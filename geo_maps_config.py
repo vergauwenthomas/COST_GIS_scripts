@@ -16,6 +16,7 @@ s2glc_path = "/home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2G
 lcz_path = "/home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif"
 
 
+
 #%% S2GLC_EUROPE_2017 Landcover map
 s2glc_settings = {
     'file': s2glc_path,
