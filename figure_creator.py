@@ -139,7 +139,7 @@ def make_basemap_plot(basemap_radius, radius_list, lat_station, lon_station, ax,
     for _idx, row in gdf.iterrows():
         ax.text(x=row['text_x'],
                     y=row['text_y'],
-                    s=row['buffer_radius'],
+                    s=row['buffer_radius'] + 'm',
                     size=10,
                     va='center', 
                     ha='left', fontweight='bold')
@@ -152,6 +152,17 @@ def make_basemap_plot(basemap_radius, radius_list, lat_station, lon_station, ax,
     #add scalebar
     
     ax.add_artist(ScaleBar(1))
+    
+    #add source
+    ax.annotate(text='Based on OpenStreetMap (Mapnik)',
+                xy=(0,1),
+                xytext=(0, 20),
+                xycoords='axes fraction',
+                textcoords='offset points',
+                va='top',
+                size=10)
+    
+    
     #styling
     ax.axis('off')
     
@@ -290,7 +301,14 @@ def plot_spatial_map_of_crop_and_buffer(raster_radius, lat, lon, map_info, ax,  
                                 size_vertical=10/lc_map_resolution)
         ax.add_artist(scalebar)    
 
-    
+    #add source
+    ax.annotate(text=map_info['source_text'],
+                xy=(0,1),
+                xytext=(0, 25),
+                xycoords='axes fraction',
+                textcoords='offset points',
+                va='top',
+                size=10)
 
     #styling
     ax.axis('off')
@@ -325,6 +343,14 @@ def make_stacked_barplot(ax, location_data, map_info):
     
     #legend already in ax2 plot
     ax.get_legend().remove()
+    
+    ax.annotate(text=map_info['source_text'],
+                xy=(0,1),
+                xytext=(0, 20),
+                xycoords='axes fraction',
+                textcoords='offset points',
+                va='top',
+                size=10)
 
     plt.xticks(rotation=0)
     return ax

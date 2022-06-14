@@ -20,6 +20,7 @@ lcz_path = "/home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif"
 #%% S2GLC_EUROPE_2017 Landcover map
 s2glc_settings = {
     'file': s2glc_path,
+    'source_text': 'Based on the S2GLC(2017)V1.2 product.',
     'data_band': 1,
     'classes': {
         0: {'color': '#FFFFFF', 'name': 'clouds'},
@@ -42,6 +43,7 @@ s2glc_settings = {
 
 lcz_settings = {
     'file': lcz_path,
+    'source_text': 'Based on the WUDAPT European LCZ map.',
     'data_band': 1,
     'classes': {
         0: {'color': '#0700C7', 'name': 'LCZ-G, water'}, #because seasurfaces are 0.
@@ -66,55 +68,3 @@ lcz_settings = {
     }
 
 
-
-# #%% predefined regions
-
-# gent_region = {
-#         'xmin': 3.6498,
-#         'xmax': 3.828586,
-#         'ymin': 51.0053,
-#         'ymax': 51.111377
-#         }
-
-# belgium_region = {
-#         'xmin': 2.521798,
-#         'xmax': 6.433314,
-#         'ymin': 49.475441,
-#         'ymax': 51.516600
-#     }
-
-# countries = gpd.read_file(os.path.join(path_former.MAPS_DATA_PATH,'country_borders', 'WB_countries_Admin0_10m', 'WB_countries_Admin0_10m.shp'))
-# belgium_exact = countries[countries['NAME_EN']=='Belgium']
-
-# #%%
-
-# belgium_provinces = gpd.read_file(os.path.join(path_former.MAPS_DATA_PATH,'country_borders', 'belgium', 'provinces_L08.shp'))
-
-
-# #%%functions
-
-
-
-# def rgb_to_hex(rgb_tuple):
-#     """Return color as #rrggbb for the given color values."""
-#     return '#%02x%02x%02x' % (rgb_tuple[0], rgb_tuple[1], rgb_tuple[2])
-
-
-
-# def normalize_colors(settings):
-#     dic = settings['classes']
-#     for category in dic:
-#         # dic[category]['color'] =  tuple([(float(x)/255.0) for x in dic[category]['color']])
-#         dic[category]['color'] = rgb_to_hex(dic[category]['color'])
-#     settings['classes'] = dic
-#     return settings
-
-# s2glc_settings = normalize_colors(s2glc_settings)
-# lcz_settings = normalize_colors(lcz_settings)
-
-# def get_color_map_dict(map_info):
-#     return {value: map_info['classes'][value]['color'] for value in map_info['classes']}
-# def get_color_map_dict_by_classname(map_info):
-#     return {map_info['classes'][value]['name']: map_info['classes'][value]['color'] for value in map_info['classes']}
-# def get_name_map_dict(map_info):
-#     return {value: map_info['classes'][value]['name'] for value in map_info['classes']}
