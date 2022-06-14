@@ -20,7 +20,7 @@ lcz_path = "/home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif"
 #%% S2GLC_EUROPE_2017 Landcover map
 s2glc_settings = {
     'file': s2glc_path,
-    'source_text': 'Based on the S2GLC(2017)V1.2 product.',
+    'source_text': 'S2GLC-2017 V1.2 product (https://s2glc.cbk.waw.pl/)',
     'data_band': 1,
     'classes': {
         0: {'color': '#FFFFFF', 'name': 'clouds'},
@@ -43,7 +43,7 @@ s2glc_settings = {
 
 lcz_settings = {
     'file': lcz_path,
-    'source_text': 'Based on the WUDAPT European LCZ map.',
+    'source_text': 'WUDAPT European LCZ map (https://www.wudapt.org/lcz-maps/)',
     'data_band': 1,
     'classes': {
         0: {'color': '#646bf9', 'name': 'LCZ-G, water'}, #because seasurfaces are 0.
@@ -65,6 +65,18 @@ lcz_settings = {
         16: {'color': '#fbf7ae', 'name': 'LCZ-F, bare soil or sand'},
         17: {'color': '#646bf9', 'name': 'LCZ-G, water'},
         }
+    }
+
+
+DEM_settings = {
+    'folder': "/home/thoverga/Documents/github/maps/DEM",
+    'source_text': 'European Digital Elevation Model (EU-DEM), V1.1 (https://land.copernicus.eu/imagery-in-situ/eu-dem)',
+    'data_band': 1,
+    'no_suitable_map_found': {'file_text': 'Not contained by current available maps.',
+                              'value': None}
+    
+    
+    
     }
 
 

@@ -37,6 +37,14 @@ from matplotlib_scalebar.scalebar import ScaleBar
 
 
 
+parameters = {'axes.labelsize': 25,
+              'xtick.labelsize': 15, 	
+              'ytick.labelsize': 15,
+              'figure.titlesize': 35,
+              'legend.fontsize': 20,
+              'axes.titlesize': 25}
+plt.rcParams.update(parameters)
+
 
 # def make_basemap_plot(basemap_radius, radius_list, lat_station, lon_station, ax, lc_map_location):
     
@@ -154,13 +162,13 @@ def make_basemap_plot(basemap_radius, radius_list, lat_station, lon_station, ax,
     ax.add_artist(ScaleBar(1))
     
     #add source
-    ax.annotate(text='Based on OpenStreetMap (Mapnik)',
-                xy=(0,1),
-                xytext=(0, 20),
-                xycoords='axes fraction',
-                textcoords='offset points',
-                va='top',
-                size=10)
+    # ax.annotate(text='Based on OpenStreetMap (Mapnik)',
+    #             xy=(0,1),
+    #             xytext=(0, 20),
+    #             xycoords='axes fraction',
+    #             textcoords='offset points',
+    #             va='top',
+    #             size=10)
     
     
     #styling
@@ -302,13 +310,13 @@ def plot_spatial_map_of_crop_and_buffer(raster_radius, lat, lon, map_info, ax,  
         ax.add_artist(scalebar)    
 
     #add source
-    ax.annotate(text=map_info['source_text'],
-                xy=(0,1),
-                xytext=(0, 25),
-                xycoords='axes fraction',
-                textcoords='offset points',
-                va='top',
-                size=10)
+    # ax.annotate(text=map_info['source_text'],
+    #             xy=(0,1),
+    #             xytext=(0, 25),
+    #             xycoords='axes fraction',
+    #             textcoords='offset points',
+    #             va='top',
+    #             size=10)
 
     #styling
     ax.axis('off')
@@ -344,13 +352,13 @@ def make_stacked_barplot(ax, location_data, map_info):
     #legend already in ax2 plot
     ax.get_legend().remove()
     
-    ax.annotate(text=map_info['source_text'],
-                xy=(0,1),
-                xytext=(0, 20),
-                xycoords='axes fraction',
-                textcoords='offset points',
-                va='top',
-                size=10)
+    # ax.annotate(text=map_info['source_text'],
+    #             xy=(0,1),
+    #             xytext=(0, 20),
+    #             xycoords='axes fraction',
+    #             textcoords='offset points',
+    #             va='top',
+    #             size=10)
 
     plt.xticks(rotation=0)
     return ax
@@ -358,7 +366,7 @@ def make_stacked_barplot(ax, location_data, map_info):
 
 #%% wrappers and combiners
 
-def create_and_save_combined_figure(location, location_data, outputfolder, N_arrow_fig, basemap_overshoot_factor = 1.2):
+def create_and_save_combined_figure(location, location_data, outputfolder, N_arrow_fig, source_list, basemap_overshoot_factor = 1.2):
     
     bufferlist = list(location_data['landcover'].keys())
     
@@ -406,14 +414,39 @@ def create_and_save_combined_figure(location, location_data, outputfolder, N_arr
                                                             add_centerpoint=True,
                                                             N_arrow_fig=N_arrow_fig,
                                                             add_N_arrow_and_scale=True)
+    ax4.title.set_text(location_data['lcz'])
+
     
     
     # create titles
+    title = 'Landcover fractions for ' + location + ' (' + str(location_data['lat']) + 'N, ' + str(location_data['lon']) + 'E)'
     
-    title = 'Landcover fractions for ' + location + ' (' + str(location_data['lat']) + 'N, ' + str(location_data['lon']) + 'E)' 
+    #add altitude to the figure if available
+    altitude = location_data['height']['Altitude']
+    if isinstance(altitude, float):
+        title += ', altitude: ' + "{:.1f}".format(altitude) + 'm'
+    
+    
     plt.suptitle(title,fontsize=30)
     
-    ax4.title.set_text(location_data['lcz'])
+    #add sources
+    newline_space_y = 0.03
+    indent_space_x = 0.02
+    
+    start_location_x = 0.75
+    start_location_y = 0.10
+
+    plt.figtext(x=start_location_x, y=start_location_y, s='Datasources:', fontsize=15)
+    
+    current_anchor_x = start_location_x + indent_space_x
+    current_anchor_y = start_location_y
+    for source_text in source_list:
+        current_anchor_y = current_anchor_y - newline_space_y 
+        plt.figtext(x=current_anchor_x,
+                    y=current_anchor_y,
+                    s=source_text,
+                    url = 'https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figtext.html',
+                    fontsize=13)
     
     #save figure
     

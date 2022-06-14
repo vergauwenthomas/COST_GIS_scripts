@@ -71,6 +71,7 @@ def location_info_dict_to_dataframe(location_info, lc_class_to_human_mapper):
         
         # get lcz
         lcz = location_info[location]['lcz']
+        altitude = location_info[location]['height']['Altitude']
         
         #get landcoverfractions
         for buffer_radius in location_info[location]['landcover']:
@@ -84,12 +85,13 @@ def location_info_dict_to_dataframe(location_info, lc_class_to_human_mapper):
         location_df['lat'] = lat
         location_df['lon'] = lon
         location_df['LCZ'] = lcz
+        location_df['altitude'] = altitude
         
         combined_df = combined_df.append(location_df)
         
     
     lc_column_order = [lc_class['name'] for _,lc_class in lc_class_to_human_mapper.items()]
-    column_order = ['station', 'lat', 'lon', 'LCZ', 'buffer_radius']
+    column_order = ['station', 'lat', 'lon', 'LCZ', 'altitude', 'buffer_radius']
     column_order.extend(lc_column_order)
             
     return combined_df[column_order]

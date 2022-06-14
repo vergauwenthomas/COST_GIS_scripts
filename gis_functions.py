@@ -8,10 +8,12 @@ Collection of GIS functions
 
 @author: thoverga
 """
+import os
 import rasterio
 import rasterstats
 import pandas as pd
 import geopandas as gpd
+from shapely.geometry import Point
 
 
 
@@ -39,6 +41,79 @@ def extract_LCZ_from_coordinates(lat, lon, lcz_map_location, class_to_human_mapp
     lcz_class = class_to_human_mapper[lcz_raster_value[0]]['name']
     return lcz_class
 
+#%% Altitude functions
+
+def extract_height_from_specific_map(lat, lon, map_location, map_band=1, interpolate='nearest'):
+    
+    #extract coordinatesystem from the rasterfile
+    with rasterio.open(map_location) as src:    
+        map_crs = str(src.crs) 
+    
+    #transform that lat-lon coordinates to the coordinatesystem of the rasterfile, and make geometry point object.
+    point = coordinate_to_point_geometry(lat=lat,
+                                         lon=lon,
+                                         crs=map_crs)
+
+    #extract raster value for the point object
+    raster_value = rasterstats.point_query(vectors=point,
+                                               raster=map_location,
+                                               band=map_band,
+                                               nodata=None,
+                                               affine=None,
+                                               interpolate=interpolate, #nearest or bilinear (beliniear --> no direct mapping to a class possible)
+                                               geojson_out=False)
+    
+    return raster_value[0]
+
+def extract_height_from_coordinates(location_data, map_bounds_geodf, dem_settings):
+
+    returndict = {}
+    
+    #coordinates to point
+    location_point = Point(location_data['lon'], location_data['lat'])
+    
+    #check if point is contained by one of the maps
+    contained_by = map_bounds_geodf[map_bounds_geodf.contains(location_point)]
+    
+    if contained_by.empty: #if point not contained by maps, fill in standard values defined in the dem_settings
+        returndict['DEM-file'] = dem_settings['no_suitable_map_found']['file_text']
+        returndict['Altitude'] = dem_settings['no_suitable_map_found']['value']
+        return returndict
+    
+    #get path of map to be used
+    map_to_use = contained_by['map'].iloc[0]
+    returndict['DEM-file'] = map_to_use
+
+    #extract height from map
+    altitude = extract_height_from_specific_map(lat=location_data['lat'],
+                                                lon=location_data['lon'],
+                                                map_location= os.path.join(dem_settings['folder'], map_to_use),
+                                                map_band=dem_settings['data_band'])
+    returndict['Altitude'] = altitude
+    
+    return returndict
+
+#%% Raster file data handling
+
+def generate_bounds_gdf_for_folder_of_tiffs(folder_path, output_crs='epsg:4326'):
+    
+    #get all files in the folder
+    filenames = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+
+    bounds_df = pd.DataFrame()
+    for mapfile in filenames:
+        with rasterio.open(os.path.join(folder_path, mapfile)) as src:
+            map_crs = str(src.crs)
+            
+            gdf = bounds_to_polygon(bound = src.bounds,
+                                    bound_crs = map_crs,
+                                    polygon_crs = output_crs, #convert dem boudns to latlon bounds
+                                    return_gpd = True)
+            gdf['map'] = mapfile
+            
+            bounds_df = bounds_df.append(gdf)
+            
+    return gpd.GeoDataFrame(bounds_df).reset_index(drop=True)
 
 
 
@@ -73,6 +148,24 @@ def df_to_geodf(df, crs, lat_identifier, lon_identifier):
     geo_df = geo_df.set_crs(epsg = 4326) #inpunt are gps coordinates
     geo_df = geo_df.to_crs(crs)
     return geo_df
+
+def bounds_to_polygon(bound, bound_crs, polygon_crs = 'epsg:4326', return_gpd = False):
+    from shapely.geometry import Polygon
+        
+    p1 = [bound.left, bound.top]
+    p2 = [bound.right, bound.top]
+    p3 = [bound.right, bound.bottom]
+    p4 = [bound.left, bound.bottom]
+    
+    polygon_geom = Polygon([p1,p2,p3,p4])
+
+    polygon = gpd.GeoDataFrame(index=[0], crs=bound_crs, geometry=[polygon_geom])
+    polygon = polygon.to_crs(polygon_crs)
+    if return_gpd:
+        return polygon
+    else:
+        return polygon.iloc[0]
+
 #%% raster extraction functions
 
 
