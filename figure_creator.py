@@ -7,33 +7,26 @@ Created on Thu Jun  9 14:40:26 2022
 """
 
 import os
-import gis_functions
-from geo_maps_config import s2glc_settings, lcz_settings
-import matplotlib.pyplot as plt
-import geoplot as gplt
-import geoplot.crs as gcrs
-import pandas as pd
-import geopandas as gpd
-import rasterio
-
-import cv2
-from mpl_toolkits.axes_grid1.anchored_artists import AnchoredSizeBar
-from matplotlib.offsetbox import OffsetImage, AnnotationBbox
-import matplotlib.pyplot as plt
-import geoplot as gplt
-import geoplot.crs as gcrs
+from copy import copy
+import numpy as np
 import pandas as pd
 import geopandas as gpd
 import rasterio
 import rasterstats
-from copy import copy
-import numpy as np
+from cv2 import cvtColor, COLOR_BGR2RGB
+
+import matplotlib.pyplot as plt
+from mpl_toolkits.axes_grid1.anchored_artists import AnchoredSizeBar
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 from matplotlib.colors import ListedColormap, BoundaryNorm
 from matplotlib.lines import Line2D
-
+from matplotlib_scalebar.scalebar import ScaleBar
+import geoplot.crs as gcrs
 import contextily as cx
     
-from matplotlib_scalebar.scalebar import ScaleBar
+import gis_functions
+from geo_maps_config import s2glc_settings, lcz_settings
+
 
 
 
@@ -46,47 +39,6 @@ parameters = {'axes.labelsize': 25,
 plt.rcParams.update(parameters)
 
 
-# def make_basemap_plot(basemap_radius, radius_list, lat_station, lon_station, ax, lc_map_location):
-    
-    
-#     #extract coordinatesystem from the rasterfile so a buffer can be defined in meters
-#     with rasterio.open(lc_map_location) as src:    
-#         map_crs = str(src.crs)
-    
-#     #create a geopandas dataframe
-#     df = pd.DataFrame({'lat':[lat_station], 'lon':[lon_station]})
-#     gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df['lon'], df['lat']))
-#     gdf = gdf.set_crs(epsg = 4326) #inpunt are gps coordinates
-#     gdf = gdf.to_crs(map_crs)
-
-    
-#     #save station location
-#     gdf['center_point'] = gdf['geometry']
-    
-
-#     #Get extend
-#     gdf['basemap_radius'] = gdf['geometry'].buffer(float(basemap_radius), resolution=30)
-#     latlon_extent = gdf['basemap_radius'].to_crs(4326).total_bounds
-    
-
-#     #to webmercator
-#     webmercator_epsg = 3857
-#     gdf = gdf.to_crs(webmercator_epsg)
-    
-    
-    
-#     #create basemap
-#     gplt.webmap(df = gdf,extent=latlon_extent, projection=gcrs.WebMercator(), zoom = 17, ax=ax)
-    
-#     #add station point
-#     gdf['center_point'].to_crs(webmercator_epsg).plot(ax=ax, color='red')
-    
-#     #draw buffer circles
-#     for radius in radius_list:
-#         gdf['buffer_polygon'] = gdf['center_point'].buffer(float(radius), resolution=30)
-#         gdf['buffer_polygon'].to_crs(webmercator_epsg).plot(ax=ax, facecolor='none', edgecolor='black')
-
-#     return ax
 
 def make_basemap_plot(basemap_radius, radius_list, lat_station, lon_station, ax, lc_map_location):
     
@@ -158,7 +110,6 @@ def make_basemap_plot(basemap_radius, radius_list, lat_station, lon_station, ax,
     
     
     #add scalebar
-    
     ax.add_artist(ScaleBar(1))
     
     #add source
@@ -289,7 +240,8 @@ def plot_spatial_map_of_crop_and_buffer(raster_radius, lat, lon, map_info, ax,  
         
         #add north arrow
         arrow_arr_img = plt.imread(N_arrow_fig)
-        arrow_RGB_img = cv2.cvtColor(arrow_arr_img, cv2.COLOR_BGR2RGB) #because matplotlib uses RGB format instead of BGR
+        # arrow_RGB_img = cv2.cvtColor(arrow_arr_img, cv2.COLOR_BGR2RGB) #because matplotlib uses RGB format instead of BGR
+        arrow_RGB_img = cvtColor(arrow_arr_img, COLOR_BGR2RGB) #because matplotlib uses RGB format instead of BGR
         
         arrow_im = OffsetImage(arrow_RGB_img, zoom=.06)
         arrow_ab = AnnotationBbox(arrow_im, (1, 0.9), xycoords='axes fraction',frameon=False, box_alignment=(0.,-0.1))
