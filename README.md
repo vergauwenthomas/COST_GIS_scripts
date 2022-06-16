@@ -4,6 +4,12 @@ Scripts to extract geospatial information for a given coordinate. The output is 
 Output overview figure example
 ![Alt text](examples/station1_overview.svg?raw=true "Title")
 
+Output tabular data example:
+![Alt text](examples/tabular_data.csv?raw=true "Title")
+![Alt text](examples/tabular_data_example.png?raw=true "Title")
+
+# required software and running
+To run execute `main.py -[]`.   
 
 
 
