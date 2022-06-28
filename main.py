@@ -18,7 +18,15 @@ import figure_creator
 
 #%% Settings
 
-buffer_list = [500, 250, 100, 50, 20]
+buffer_list = [500, 250, 100, 50, 20] #buffers in meters
+
+#output folder for figures and tabular data
+outputfolder = '/home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output'
+
+#externalfigures
+north_arrow = os.path.join(wdir, 'external_figures', 'North-Arrow.jpg')
+
+
 
 
 #%% IO
@@ -47,12 +55,6 @@ Location_info = {'station1':
 
     
 
-outputfolder = '/home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output'
-
-#externalfigures
-north_arrow = os.path.join(wdir, 'external_figures', 'North-Arrow.jpg')
-
-
 
 
 
@@ -64,17 +66,17 @@ north_arrow = os.path.join(wdir, 'external_figures', 'North-Arrow.jpg')
 #%% Elevation extractor
 
 
-
+#extract bound for all DEM.tif files, so only the relevant will be opend later
 dem_bounds_gdf = gis_functions.generate_bounds_gdf_for_folder_of_tiffs(folder_path=geo_maps_config.DEM_settings['folder'],
                                                          output_crs='epsg:4326')
 
 for location in Location_info:
     location_data = Location_info[location]
-    Location_info[location]['height'] = gis_functions.extract_height_from_coordinates(location_data = Location_info[location],
+    height = gis_functions.extract_height_from_coordinates(location_data = Location_info[location],
                                                                                       map_bounds_geodf = dem_bounds_gdf,
                                                                                       dem_settings = geo_maps_config.DEM_settings)
-    
-
+    #update location info
+    Location_info[location]['height'] = height
 
 
 #%% LCZ extraction
@@ -108,10 +110,11 @@ for location in Location_info:
         Location_info[location]['landcover'][buffer_radius] = fractions
 
 
-#%% save output
+#%% save output as tabular data
 df = formatting_functions.location_info_dict_to_dataframe(location_info=Location_info,
                                                             lc_class_to_human_mapper = geo_maps_config.s2glc_settings['classes'])
 
+print("Writing tabular data: ", str(os.path.join(outputfolder, 'tabular_data.csv')), flush=True)
 df.to_csv(os.path.join(outputfolder, 'tabular_data.csv'), index=False)
 
 

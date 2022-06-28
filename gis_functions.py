@@ -17,8 +17,7 @@ from shapely.geometry import Point
 
 
 
-
-#%% LCZ functions
+#%%  -----------------------------------------  LCZ functions ----------------------------------------------
 def extract_LCZ_from_coordinates(lat, lon, lcz_map_location, class_to_human_mapper, lcz_map_band=1, interpolate='nearest'):
     
     #extract coordinatesystem from the rasterfile
@@ -41,7 +40,10 @@ def extract_LCZ_from_coordinates(lat, lon, lcz_map_location, class_to_human_mapp
     lcz_class = class_to_human_mapper[lcz_raster_value[0]]['name']
     return lcz_class
 
-#%% Altitude functions
+
+
+
+#%%  -----------------------------------------  Altitude functions ----------------------------------------------
 
 def extract_height_from_specific_map(lat, lon, map_location, map_band=1, interpolate='nearest'):
     
@@ -93,8 +95,8 @@ def extract_height_from_coordinates(location_data, map_bounds_geodf, dem_setting
     
     return returndict
 
-#%% Raster file data handling
 
+#%%  -----------------------------------------  Raster file data functions ----------------------------------------------
 def generate_bounds_gdf_for_folder_of_tiffs(folder_path, output_crs='epsg:4326'):
     
     #get all files in the folder

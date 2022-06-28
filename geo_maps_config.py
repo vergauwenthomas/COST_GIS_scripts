@@ -14,7 +14,7 @@ Config file for the geospatial raster files.
 
 s2glc_path = "/home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif"
 lcz_path = "/home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif"
-
+dem_dir_path = "/home/thoverga/Documents/github/maps/DEM" #all files with .tif extension in the directory will be used. 
 
 
 #%% S2GLC_EUROPE_2017 Landcover map
@@ -69,7 +69,7 @@ lcz_settings = {
 
 
 DEM_settings = {
-    'folder': "/home/thoverga/Documents/github/maps/DEM",
+    'folder': dem_dir_path,
     'source_text': 'European Digital Elevation Model (EU-DEM), V1.1 (https://land.copernicus.eu/imagery-in-situ/eu-dem)',
     'data_band': 1,
     'no_suitable_map_found': {'file_text': 'Not contained by current available maps.',
