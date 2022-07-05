@@ -7,15 +7,16 @@ Collection of GIS functions
 
 
 @author: thoverga
-"""
+""" 
 import os
+import logging
 import rasterio
 import rasterstats
 import pandas as pd
 import geopandas as gpd
 from shapely.geometry import Point
 
-
+logging.info("Loading module gis_functions.py")
 
 #%%  -----------------------------------------  LCZ functions ----------------------------------------------
 def extract_LCZ_from_coordinates(lat, lon, lcz_map_location, class_to_human_mapper, lcz_map_band=1, interpolate='nearest'):
@@ -68,7 +69,7 @@ def extract_height_from_specific_map(lat, lon, map_location, map_band=1, interpo
     return raster_value[0]
 
 def extract_height_from_coordinates(location_data, map_bounds_geodf, dem_settings):
-
+    
     returndict = {}
     
     #coordinates to point
@@ -78,6 +79,7 @@ def extract_height_from_coordinates(location_data, map_bounds_geodf, dem_setting
     contained_by = map_bounds_geodf[map_bounds_geodf.contains(location_point)]
     
     if contained_by.empty: #if point not contained by maps, fill in standard values defined in the dem_settings
+        logging.warning("    No suitable DEM map found for this location: %s", location_data)
         returndict['DEM-file'] = dem_settings['no_suitable_map_found']['file_text']
         returndict['Altitude'] = dem_settings['no_suitable_map_found']['value']
         return returndict
@@ -85,6 +87,7 @@ def extract_height_from_coordinates(location_data, map_bounds_geodf, dem_setting
     #get path of map to be used
     map_to_use = contained_by['map'].iloc[0]
     returndict['DEM-file'] = map_to_use
+    logging.info("    For location %s this DEM file is used: %s", location_data, map_to_use)
 
     #extract height from map
     altitude = extract_height_from_specific_map(lat=location_data['lat'],
@@ -98,10 +101,10 @@ def extract_height_from_coordinates(location_data, map_bounds_geodf, dem_setting
 
 #%%  -----------------------------------------  Raster file data functions ----------------------------------------------
 def generate_bounds_gdf_for_folder_of_tiffs(folder_path, output_crs='epsg:4326'):
-    
+    logging.info('Generating bounds of geo files in dir %s.', folder_path)
     #get all files in the folder
     filenames = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
-
+    logging.info('    These files are found: %s', filenames)
     bounds_df = pd.DataFrame()
     for mapfile in filenames:
         with rasterio.open(os.path.join(folder_path, mapfile)) as src:
@@ -180,7 +183,7 @@ def extract_landfractions_from_from_coordinate(lat, lon, buffer_radius, raster_m
     #extract coordinatesystem from the rasterfile
     with rasterio.open(raster_map_location) as src:    
         raster_map_crs = str(src.crs) 
-    
+    logging.debug('    Creating %s m buffer', buffer_radius)
     buffer = coordinate_to_circular_buffer_geometry(lat_center = lat,
                                                     lon_center = lon,
                                                     radius_m= buffer_radius,
@@ -189,6 +192,7 @@ def extract_landfractions_from_from_coordinate(lat, lon, buffer_radius, raster_m
     #make mapper to map raster classes to human classes
     namedict = {map_class: class_to_human_mapper[map_class]['name'] for map_class in class_to_human_mapper}
     
+    logging.debug('    Extracting landcover counts...')
     #extract raster values in the buffer
     zs = rasterstats.zonal_stats(vectors = buffer,
                                   raster = raster_map_location,
@@ -203,8 +207,7 @@ def extract_landfractions_from_from_coordinate(lat, lon, buffer_radius, raster_m
    
    
     #convert to 1D array with unmasked values
-    # present_classes = cropped_raster_array.flatten() #to 1D
-    # present_classes = present_classes[present_classes.mask == False].data #extract unmasked values
+    logging.debug('    Convering counts to fractions in human-readable space...')
     present_classes = extract_non_masked_values_from_masked_array(cropped_raster_array)
     #fractions counts
     freq_table = pd.Series(present_classes).value_counts()

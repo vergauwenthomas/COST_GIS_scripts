@@ -7,6 +7,8 @@ Created on Thu Jun  9 14:40:26 2022
 """
 
 import os
+import logging
+logging.info("Loading module figure_creator.py")
 from copy import copy
 import numpy as np
 import pandas as pd
@@ -331,7 +333,7 @@ def create_and_save_combined_figure(location, location_data, outputfolder, N_arr
     ax4 = plt.subplot(144)
     # basemap plot
     
-    
+    logging.info("    Creating OSM basemap..")
     ax1 = make_basemap_plot(basemap_radius = basemap_overshoot_factor * max(bufferlist),
                                             radius_list=bufferlist,
                                             lat_station=location_data['lat'],
@@ -340,6 +342,7 @@ def create_and_save_combined_figure(location, location_data, outputfolder, N_arr
                                             lc_map_location = s2glc_settings['file'])
     
     #geo raster plot
+    logging.info("    Creating landcover map..")
     ax2 = plot_spatial_map_of_crop_and_buffer(raster_radius = basemap_overshoot_factor * max(bufferlist),
                                               lat = location_data['lat'],
                                               lon = location_data['lon'],
@@ -352,11 +355,12 @@ def create_and_save_combined_figure(location, location_data, outputfolder, N_arr
     
     
     # #barplot
+    logging.info("    Creating barchart..")
     ax3 = make_stacked_barplot(ax = ax3,
                                           location_data=location_data,
                                           map_info=s2glc_settings)
     
-    
+    logging.info("    Creating LCZ map..")
     ax4 = plot_spatial_map_of_crop_and_buffer(raster_radius=basemap_overshoot_factor * max(bufferlist),
                                                             lat = location_data['lat'],
                                                             lon = location_data['lon'],
@@ -371,6 +375,7 @@ def create_and_save_combined_figure(location, location_data, outputfolder, N_arr
     
     
     # create titles
+    logging.info("    Adding figure style elements..")
     title = 'Landcover fractions for ' + location + ' (' + str(location_data['lat']) + 'N, ' + str(location_data['lon']) + 'E)'
     
     #add altitude to the figure if available
@@ -403,6 +408,7 @@ def create_and_save_combined_figure(location, location_data, outputfolder, N_arr
     #save figure
     
     figure_name = location + '_overview.svg'
+    logging.info("    saving figure as %s", os.path.join(outputfolder, figure_name))
     plt.savefig(os.path.join(outputfolder, figure_name))
     
     

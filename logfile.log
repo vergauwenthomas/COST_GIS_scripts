@@ -1,0 +1,962 @@
+INFO:root:Loading module geo_maps_config.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Loading module geo_maps_config.py
+CRITICAL:root:S2glc file ( /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif ) not found! 
+CRITICAL:root:lcz-map file ( /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif ) not found! 
+CRITICAL:root:DEM folder ( /home/thoverga/Documents/github/maps/DEM ) not found! 
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Detection of /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/station_data_NS.csv as a csv file.
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Detection of /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/station_data_NS.csv as a csv file.
+INFO:root:Generating bounds of geo files in dir /home/thoverga/Documents/github/maps/DEM.
+INFO:root:    These files are found: ['eu_dem_v11_E40N20.TIF', 'eu_dem_v11_E30N30.TIF', 'eu_dem_v11_E40N30.TIF', 'eu_dem_v11_E30N20.TIF']
+INFO:root:Extracting hight from DEM for station 2-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.258055, 'lon': 19.814722}
+INFO:root:Extracting hight from DEM for station 2-2
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.249166, 'lon': 19.837222}
+INFO:root:Extracting hight from DEM for station 2-3
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.261388, 'lon': 19.848888}
+INFO:root:Extracting hight from DEM for station 3-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.243055, 'lon': 19.806388}
+INFO:root:Extracting hight from DEM for station 3-2
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.233333, 'lon': 19.809722}
+INFO:root:Extracting hight from DEM for station 5-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.252222, 'lon': 19.798333}
+INFO:root:Extracting hight from DEM for station 5-2
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.25, 'lon': 19.816111}
+INFO:root:Extracting hight from DEM for station 5-3
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.2625, 'lon': 19.826388}
+INFO:root:Extracting hight from DEM for station 5-4
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.238055, 'lon': 19.832777}
+INFO:root:Extracting hight from DEM for station 5-5
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.253055, 'lon': 19.8475}
+INFO:root:Extracting hight from DEM for station 5-6
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.2425, 'lon': 19.847222}
+INFO:root:Extracting hight from DEM for station 6-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.2552, 'lon': 19.7633}
+INFO:root:Extracting hight from DEM for station 6-2
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.276944, 'lon': 19.781388}
+INFO:root:Extracting hight from DEM for station 6-3
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.243333, 'lon': 19.782222}
+INFO:root:Extracting hight from DEM for station 6-4
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.233611, 'lon': 19.791944}
+INFO:root:Extracting hight from DEM for station 6-5
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.286994, 'lon': 19.828336}
+INFO:root:Extracting hight from DEM for station 6-6
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.29873, 'lon': 19.82254}
+INFO:root:Extracting hight from DEM for station 6-7
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.2225, 'lon': 19.845555}
+INFO:root:Extracting hight from DEM for station 6-8
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.251388, 'lon': 19.875555}
+INFO:root:Extracting hight from DEM for station 6-9
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.240555, 'lon': 19.881111}
+INFO:root:Extracting hight from DEM for station 8-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.272369, 'lon': 19.820833}
+INFO:root:Extracting hight from DEM for station 9-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.235, 'lon': 19.768055}
+INFO:root:Extracting hight from DEM for station 9-2
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.299166, 'lon': 19.811666}
+INFO:root:Extracting hight from DEM for station 9-3
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.239166, 'lon': 19.866388}
+INFO:root:Extracting hight from DEM for station 10-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.267456, 'lon': 19.883928}
+INFO:root:Extracting hight from DEM for station A-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.294728, 'lon': 19.886231}
+INFO:root:Extracting hight from DEM for station D-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.385339, 'lon': 19.830964}
+INFO:root:Extracting LCZ for station 2-1
+INFO:root:Extracting LCZ for station 2-2
+INFO:root:Extracting LCZ for station 2-3
+INFO:root:Extracting LCZ for station 3-1
+INFO:root:Extracting LCZ for station 3-2
+INFO:root:Extracting LCZ for station 5-1
+INFO:root:Extracting LCZ for station 5-2
+INFO:root:Extracting LCZ for station 5-3
+INFO:root:Extracting LCZ for station 5-4
+INFO:root:Extracting LCZ for station 5-5
+INFO:root:Extracting LCZ for station 5-6
+INFO:root:Extracting LCZ for station 6-1
+INFO:root:Extracting LCZ for station 6-2
+INFO:root:Extracting LCZ for station 6-3
+INFO:root:Extracting LCZ for station 6-4
+INFO:root:Extracting LCZ for station 6-5
+INFO:root:Extracting LCZ for station 6-6
+INFO:root:Extracting LCZ for station 6-7
+INFO:root:Extracting LCZ for station 6-8
+INFO:root:Extracting LCZ for station 6-9
+INFO:root:Extracting LCZ for station 8-1
+INFO:root:Extracting LCZ for station 9-1
+INFO:root:Extracting LCZ for station 9-2
+INFO:root:Extracting LCZ for station 9-3
+INFO:root:Extracting LCZ for station 10-1
+INFO:root:Extracting LCZ for station A-1
+INFO:root:Extracting LCZ for station D-1
+INFO:root:Extracting LCZ for station 2-1
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 2-2
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 2-3
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 3-1
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 3-2
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 5-1
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 5-2
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 5-3
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 5-4
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 5-5
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 5-6
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 6-1
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 6-2
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 6-3
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 6-4
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 6-5
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 6-6
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 6-7
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 6-8
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 6-9
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 8-1
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 9-1
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 9-2
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 9-3
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station 10-1
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station A-1
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Extracting LCZ for station D-1
+INFO:root:    Creating 500 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 250 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 100 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 50 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:    Creating 20 m buffer
+INFO:root:    Extracting landcover counts...
+INFO:root:    Convering counts to fractions in human-readable space...
+INFO:root:Exporting output to json file: /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/json_data.json
+INFO:root:Converting output to tabular form.
+INFO:root:Writing tabular data to /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/tabular_data.csv 
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Detection of /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/station_data_NS.csv as a csv file.
+INFO:root:Generating bounds of geo files in dir /home/thoverga/Documents/github/maps/DEM.
+INFO:root:    These files are found: ['eu_dem_v11_E40N20.TIF', 'eu_dem_v11_E30N30.TIF', 'eu_dem_v11_E40N30.TIF', 'eu_dem_v11_E30N20.TIF']
+INFO:root:Extracting hight from DEM for station 2-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.258055, 'lon': 19.814722}
+INFO:root:Extracting hight from DEM for station 2-2
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.249166, 'lon': 19.837222}
+INFO:root:Extracting hight from DEM for station 2-3
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.261388, 'lon': 19.848888}
+INFO:root:Extracting hight from DEM for station 3-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.243055, 'lon': 19.806388}
+INFO:root:Extracting hight from DEM for station 3-2
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.233333, 'lon': 19.809722}
+INFO:root:Extracting hight from DEM for station 5-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.252222, 'lon': 19.798333}
+INFO:root:Extracting hight from DEM for station 5-2
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.25, 'lon': 19.816111}
+INFO:root:Extracting hight from DEM for station 5-3
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.2625, 'lon': 19.826388}
+INFO:root:Extracting hight from DEM for station 5-4
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.238055, 'lon': 19.832777}
+INFO:root:Extracting hight from DEM for station 5-5
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.253055, 'lon': 19.8475}
+INFO:root:Extracting hight from DEM for station 5-6
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.2425, 'lon': 19.847222}
+INFO:root:Extracting hight from DEM for station 6-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.2552, 'lon': 19.7633}
+INFO:root:Extracting hight from DEM for station 6-2
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.276944, 'lon': 19.781388}
+INFO:root:Extracting hight from DEM for station 6-3
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.243333, 'lon': 19.782222}
+INFO:root:Extracting hight from DEM for station 6-4
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.233611, 'lon': 19.791944}
+INFO:root:Extracting hight from DEM for station 6-5
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.286994, 'lon': 19.828336}
+INFO:root:Extracting hight from DEM for station 6-6
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.29873, 'lon': 19.82254}
+INFO:root:Extracting hight from DEM for station 6-7
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.2225, 'lon': 19.845555}
+INFO:root:Extracting hight from DEM for station 6-8
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.251388, 'lon': 19.875555}
+INFO:root:Extracting hight from DEM for station 6-9
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.240555, 'lon': 19.881111}
+INFO:root:Extracting hight from DEM for station 8-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.272369, 'lon': 19.820833}
+INFO:root:Extracting hight from DEM for station 9-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.235, 'lon': 19.768055}
+INFO:root:Extracting hight from DEM for station 9-2
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.299166, 'lon': 19.811666}
+INFO:root:Extracting hight from DEM for station 9-3
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.239166, 'lon': 19.866388}
+INFO:root:Extracting hight from DEM for station 10-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.267456, 'lon': 19.883928}
+INFO:root:Extracting hight from DEM for station A-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.294728, 'lon': 19.886231}
+INFO:root:Extracting hight from DEM for station D-1
+WARNING:root:    No suitable DEM map found for this location: {'lat': 45.385339, 'lon': 19.830964}
+INFO:root:Extracting LCZ for station 2-1
+INFO:root:Extracting LCZ for station 2-2
+INFO:root:Extracting LCZ for station 2-3
+INFO:root:Extracting LCZ for station 3-1
+INFO:root:Extracting LCZ for station 3-2
+INFO:root:Extracting LCZ for station 5-1
+INFO:root:Extracting LCZ for station 5-2
+INFO:root:Extracting LCZ for station 5-3
+INFO:root:Extracting LCZ for station 5-4
+INFO:root:Extracting LCZ for station 5-5
+INFO:root:Extracting LCZ for station 5-6
+INFO:root:Extracting LCZ for station 6-1
+INFO:root:Extracting LCZ for station 6-2
+INFO:root:Extracting LCZ for station 6-3
+INFO:root:Extracting LCZ for station 6-4
+INFO:root:Extracting LCZ for station 6-5
+INFO:root:Extracting LCZ for station 6-6
+INFO:root:Extracting LCZ for station 6-7
+INFO:root:Extracting LCZ for station 6-8
+INFO:root:Extracting LCZ for station 6-9
+INFO:root:Extracting LCZ for station 8-1
+INFO:root:Extracting LCZ for station 9-1
+INFO:root:Extracting LCZ for station 9-2
+INFO:root:Extracting LCZ for station 9-3
+INFO:root:Extracting LCZ for station 10-1
+INFO:root:Extracting LCZ for station A-1
+INFO:root:Extracting LCZ for station D-1
+INFO:root:Extracting LCZ for station 2-1
+INFO:root:Extracting LCZ for station 2-2
+INFO:root:Extracting LCZ for station 2-3
+INFO:root:Extracting LCZ for station 3-1
+INFO:root:Extracting LCZ for station 3-2
+INFO:root:Extracting LCZ for station 5-1
+INFO:root:Extracting LCZ for station 5-2
+INFO:root:Extracting LCZ for station 5-3
+INFO:root:Extracting LCZ for station 5-4
+INFO:root:Extracting LCZ for station 5-5
+INFO:root:Extracting LCZ for station 5-6
+INFO:root:Extracting LCZ for station 6-1
+INFO:root:Extracting LCZ for station 6-2
+INFO:root:Extracting LCZ for station 6-3
+INFO:root:Extracting LCZ for station 6-4
+INFO:root:Extracting LCZ for station 6-5
+INFO:root:Extracting LCZ for station 6-6
+INFO:root:Extracting LCZ for station 6-7
+INFO:root:Extracting LCZ for station 6-8
+INFO:root:Extracting LCZ for station 6-9
+INFO:root:Extracting LCZ for station 8-1
+INFO:root:Extracting LCZ for station 9-1
+INFO:root:Extracting LCZ for station 9-2
+INFO:root:Extracting LCZ for station 9-3
+INFO:root:Extracting LCZ for station 10-1
+INFO:root:Extracting LCZ for station A-1
+INFO:root:Extracting LCZ for station D-1
+INFO:root:Exporting output to json file: /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/json_data.json
+INFO:root:Converting output to tabular form.
+INFO:root:Writing tabular data to /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/tabular_data.csv 
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Detection of /home/thoverga/Documents/github/COST_GIS_scripts/input_coordinates.json as a json file.
+INFO:root:Generating bounds of geo files in dir /home/thoverga/Documents/github/maps/DEM.
+INFO:root:    These files are found: ['eu_dem_v11_E40N20.TIF', 'eu_dem_v11_E30N30.TIF', 'eu_dem_v11_E40N30.TIF', 'eu_dem_v11_E30N20.TIF']
+INFO:root:Extracting hight from DEM for station StationnameA
+INFO:root:    For location {'lat': 51.1226, 'lon': 4.3665} this DEM file is used: eu_dem_v11_E30N30.TIF
+INFO:root:Extracting hight from DEM for station StationnameB
+WARNING:root:    No suitable DEM map found for this location: {'lat': 46.9529, 'lon': 74225}
+INFO:root:Extracting LCZ for station StationnameA
+INFO:root:Extracting LCZ for station StationnameB
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Detection of /home/thoverga/Documents/github/COST_GIS_scripts/input_coordinates.json as a json file.
+INFO:root:Generating bounds of geo files in dir /home/thoverga/Documents/github/maps/DEM.
+INFO:root:    These files are found: ['eu_dem_v11_E40N20.TIF', 'eu_dem_v11_E30N30.TIF', 'eu_dem_v11_E40N30.TIF', 'eu_dem_v11_E30N20.TIF']
+INFO:root:Extracting hight from DEM for station StationnameA
+INFO:root:    For location {'lat': 51.1226, 'lon': 4.3665} this DEM file is used: eu_dem_v11_E30N30.TIF
+INFO:root:Extracting hight from DEM for station StationnameB
+INFO:root:    For location {'lat': 46.9529, 'lon': 7.4225} this DEM file is used: eu_dem_v11_E40N20.TIF
+INFO:root:Extracting LCZ for station StationnameA
+INFO:root:Extracting LCZ for station StationnameB
+INFO:root:Extracting LCZ for station StationnameA
+INFO:root:Extracting LCZ for station StationnameB
+INFO:root:Exporting output to json file: /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/json_data.json
+INFO:root:Converting output to tabular form.
+INFO:root:Writing tabular data to /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/tabular_data.csv 
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Started
+INFO:root:Finished
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Detection of /home/thoverga/Documents/github/COST_GIS_scripts/input_coordinates.json as a json file.
+INFO:root:Generating bounds of geo files in dir /home/thoverga/Documents/github/maps/DEM.
+INFO:root:    These files are found: ['eu_dem_v11_E40N20.TIF', 'eu_dem_v11_E30N30.TIF', 'eu_dem_v11_E40N30.TIF', 'eu_dem_v11_E30N20.TIF']
+INFO:root:Extracting hight from DEM for station StationnameA
+INFO:root:    For location {'lat': 51.1226, 'lon': 4.3665} this DEM file is used: eu_dem_v11_E30N30.TIF
+INFO:root:Extracting hight from DEM for station StationnameB
+INFO:root:    For location {'lat': 46.9529, 'lon': 7.4225} this DEM file is used: eu_dem_v11_E40N20.TIF
+INFO:root:Extracting LCZ for station StationnameA
+INFO:root:Extracting LCZ for station StationnameB
+INFO:root:Extracting LCZ for station StationnameA
+INFO:root:Extracting LCZ for station StationnameB
+INFO:root:Exporting output to json file: /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/json_data.json
+INFO:root:Converting output to tabular form.
+INFO:root:Writing tabular data to /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/tabular_data.csv 
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Detection of /home/thoverga/Documents/github/COST_GIS_scripts/input_coordinates.json as a json file.
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Detection of /home/thoverga/Documents/github/COST_GIS_scripts/input_coordinates.json as a json file.
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Detection of /home/thoverga/Documents/github/COST_GIS_scripts/input_coordinates.json as a json file.
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Detection of /home/thoverga/Documents/github/COST_GIS_scripts/input_coordinates.json as a json file.
+INFO:root:Generating bounds of geo files in dir /home/thoverga/Documents/github/maps/DEM.
+INFO:root:    These files are found: ['eu_dem_v11_E40N20.TIF', 'eu_dem_v11_E30N30.TIF', 'eu_dem_v11_E40N30.TIF', 'eu_dem_v11_E30N20.TIF']
+INFO:root:Extracting hight from DEM for station StationnameA
+INFO:root:    For location {'lat': 51.1226, 'lon': 4.3665} this DEM file is used: eu_dem_v11_E30N30.TIF
+INFO:root:Extracting hight from DEM for station StationnameB
+INFO:root:    For location {'lat': 46.9529, 'lon': 7.4225} this DEM file is used: eu_dem_v11_E40N20.TIF
+INFO:root:Extracting LCZ for station StationnameA
+INFO:root:Extracting LCZ for station StationnameB
+INFO:root:Extracting LCZ for station StationnameA
+INFO:root:Extracting LCZ for station StationnameB
+INFO:root:Exporting output to json file: /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/json_data.json
+INFO:root:Converting output to tabular form.
+INFO:root:Writing tabular data to /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/tabular_data.csv 
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Detection of /home/thoverga/Documents/github/COST_GIS_scripts/input_coordinates.json as a json file.
+INFO:root:Generating bounds of geo files in dir /home/thoverga/Documents/github/maps/DEM.
+INFO:root:    These files are found: ['eu_dem_v11_E40N20.TIF', 'eu_dem_v11_E30N30.TIF', 'eu_dem_v11_E40N30.TIF', 'eu_dem_v11_E30N20.TIF']
+INFO:root:Extracting hight from DEM for station StationnameA
+INFO:root:    For location {'lat': 51.1226, 'lon': 4.3665} this DEM file is used: eu_dem_v11_E30N30.TIF
+INFO:root:Extracting hight from DEM for station StationnameB
+INFO:root:    For location {'lat': 46.9529, 'lon': 7.4225} this DEM file is used: eu_dem_v11_E40N20.TIF
+INFO:root:Extracting LCZ for station StationnameA
+INFO:root:Extracting LCZ for station StationnameB
+INFO:root:Extracting LCZ for station StationnameA
+INFO:root:Extracting LCZ for station StationnameB
+INFO:root:Exporting output to json file: /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/json_data.json
+INFO:root:Converting output to tabular form.
+INFO:root:Writing tabular data to /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/tabular_data.csv 
+INFO:root:Loading module figure_creator.py
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Detection of /home/thoverga/Documents/github/COST_GIS_scripts/input_coordinates.json as a json file.
+INFO:root:Generating bounds of geo files in dir /home/thoverga/Documents/github/maps/DEM.
+INFO:root:    These files are found: ['eu_dem_v11_E40N20.TIF', 'eu_dem_v11_E30N30.TIF', 'eu_dem_v11_E40N30.TIF', 'eu_dem_v11_E30N20.TIF']
+INFO:root:Extracting hight from DEM for station StationnameA
+INFO:root:    For location {'lat': 51.1226, 'lon': 4.3665} this DEM file is used: eu_dem_v11_E30N30.TIF
+INFO:root:Extracting hight from DEM for station StationnameB
+INFO:root:    For location {'lat': 46.9529, 'lon': 7.4225} this DEM file is used: eu_dem_v11_E40N20.TIF
+INFO:root:Extracting LCZ for station StationnameA
+INFO:root:Extracting LCZ for station StationnameB
+INFO:root:Extracting LCZ for station StationnameA
+INFO:root:Extracting LCZ for station StationnameB
+INFO:root:Exporting output to json file: /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/json_data.json
+INFO:root:Converting output to tabular form.
+INFO:root:Writing tabular data to /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/tabular_data.csv 
+INFO:root:Creating figure for StationnameA
+INFO:root:    Creating OSM basemap..
+INFO:root:    Creating landcover map..
+INFO:root:    Creating barchart..
+INFO:root:    Creating LCZ map..
+INFO:root:    Adding figure style elements..
+INFO:root:    saving figure as StationnameA_overview.svg
+INFO:root:Creating figure for StationnameB
+INFO:root:    Creating OSM basemap..
+INFO:root:    Creating landcover map..
+INFO:root:    Creating barchart..
+INFO:root:    Creating LCZ map..
+INFO:root:    Adding figure style elements..
+INFO:root:    saving figure as StationnameB_overview.svg
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Detection of /home/thoverga/Documents/github/COST_GIS_scripts/input_coordinates.json as a json file.
+INFO:root:Generating bounds of geo files in dir /home/thoverga/Documents/github/maps/DEM.
+INFO:root:    These files are found: ['eu_dem_v11_E40N20.TIF', 'eu_dem_v11_E30N30.TIF', 'eu_dem_v11_E40N30.TIF', 'eu_dem_v11_E30N20.TIF']
+INFO:root:Extracting hight from DEM for station StationnameA
+INFO:root:    For location {'lat': 51.1226, 'lon': 4.3665} this DEM file is used: eu_dem_v11_E30N30.TIF
+INFO:root:Extracting hight from DEM for station StationnameB
+INFO:root:    For location {'lat': 46.9529, 'lon': 7.4225} this DEM file is used: eu_dem_v11_E40N20.TIF
+INFO:root:Extracting LCZ for station StationnameA
+INFO:root:Extracting LCZ for station StationnameB
+INFO:root:Extracting LCZ for station StationnameA
+INFO:root:Extracting LCZ for station StationnameB
+INFO:root:Exporting output to json file: /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/json_data.json
+INFO:root:Converting output to tabular form.
+INFO:root:Writing tabular data to /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/tabular_data.csv 
+INFO:root:Creating figure for StationnameA
+INFO:root:    Creating OSM basemap..
+INFO:root:    Creating landcover map..
+INFO:root:    Creating barchart..
+INFO:root:    Creating LCZ map..
+INFO:root:    Adding figure style elements..
+INFO:root:    saving figure as StationnameA_overview.svg
+INFO:root:Creating figure for StationnameB
+INFO:root:    Creating OSM basemap..
+INFO:root:    Creating landcover map..
+INFO:root:    Creating barchart..
+INFO:root:    Creating LCZ map..
+INFO:root:    Adding figure style elements..
+INFO:root:    saving figure as StationnameB_overview.svg
+INFO:root:Done!!
+INFO:root:Loading module figure_creator.py
+INFO:root:Loading module geo_maps_config.py
+INFO:root:S2glc file exists: /home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif
+INFO:root:lcz-map file exists: /home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif
+INFO:root:DEM folder exists: /home/thoverga/Documents/github/maps/DEM
+INFO:root:Loading module gis_functions.py
+INFO:root:Loading module formatting_functions.py
+INFO:root:Loading module figure_creator.py
+INFO:root:Detection of /home/thoverga/Documents/github/COST_GIS_scripts/input_coordinates.json as a json file.
+INFO:root:Generating bounds of geo files in dir /home/thoverga/Documents/github/maps/DEM.
+INFO:root:    These files are found: ['eu_dem_v11_E40N20.TIF', 'eu_dem_v11_E30N30.TIF', 'eu_dem_v11_E40N30.TIF', 'eu_dem_v11_E30N20.TIF']
+INFO:root:Extracting hight from DEM for station StationnameA
+INFO:root:    For location {'lat': 51.1226, 'lon': 4.3665} this DEM file is used: eu_dem_v11_E30N30.TIF
+INFO:root:Extracting hight from DEM for station StationnameB
+INFO:root:    For location {'lat': 46.9529, 'lon': 7.4225} this DEM file is used: eu_dem_v11_E40N20.TIF
+INFO:root:Extracting LCZ for station StationnameA
+INFO:root:Extracting LCZ for station StationnameB
+INFO:root:Extracting LCZ for station StationnameA
+INFO:root:Extracting LCZ for station StationnameB
+INFO:root:Exporting output to json file: /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/json_data.json
+INFO:root:Converting output to tabular form.
+INFO:root:Writing tabular data to /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/tabular_data.csv 
+INFO:root:Creating figure for StationnameA
+INFO:root:    Creating OSM basemap..
+INFO:root:    Creating landcover map..
+INFO:root:    Creating barchart..
+INFO:root:    Creating LCZ map..
+INFO:root:    Adding figure style elements..
+INFO:root:    saving figure as /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/StationnameA_overview.svg
+INFO:root:Creating figure for StationnameB
+INFO:root:    Creating OSM basemap..
+INFO:root:    Creating landcover map..
+INFO:root:    Creating barchart..
+INFO:root:    Creating LCZ map..
+INFO:root:    Adding figure style elements..
+INFO:root:    saving figure as /home/thoverga/Documents/github/COST_GIS_scripts/testcases/Novi_Sad_stations/output/StationnameB_overview.svg
+INFO:root:Done!!

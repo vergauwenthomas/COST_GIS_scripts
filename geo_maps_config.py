@@ -6,16 +6,31 @@ Config file for the geospatial raster files.
 
 @author: Thomas vergauwen
 """
-
-
+from os.path import exists, isdir
+import logging
 #%% SET PATHS
-
+logging.info("Loading module geo_maps_config.py")
 #paths to the raster files (.tif)
 
 s2glc_path = "/home/thoverga/Documents/github/maps/Landuse/S2GLC_EUROPE_2017/S2GLC_Europe_2017_v1.2.tif"
 lcz_path = "/home/thoverga/Documents/github/maps/Landuse/EU_LCZ_map.tif"
 dem_dir_path = "/home/thoverga/Documents/github/maps/DEM" #all files with .tif extension in the directory will be used. 
 
+#check if paths exists
+if exists(s2glc_path):
+    logging.info('S2glc file exists: %s', s2glc_path)
+else:
+    logging.critical('S2glc file ( %s ) not found! ', s2glc_path)
+
+if exists(lcz_path):
+    logging.info('lcz-map file exists: %s', lcz_path)
+else:
+    logging.critical('lcz-map file ( %s ) not found! ', lcz_path)
+
+if isdir(dem_dir_path):
+    logging.info('DEM folder exists: %s', dem_dir_path)
+else:
+    logging.critical('DEM folder ( %s ) not found! ', dem_dir_path)
 
 #%% S2GLC_EUROPE_2017 Landcover map
 s2glc_settings = {
