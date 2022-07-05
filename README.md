@@ -16,7 +16,7 @@ To run :
 * Check if the paths are correct in the `set_env_variables.sh`.
 * Activate conda environment: `conda activate cost_scripts_env`. (Make sure the environment is installed.) 
 * Then execute `source set_env_variables` and (in the same shell) `./main.py`.
-* (To read the log files: `tail logfile.log`.)
+* To read the log files: `tail logfile.log`.
 
 
 # Required Geo maps
