@@ -23,3 +23,5 @@ For all these maps only the .tif file is required.
 Thomas Vergauwen - Royal Meteorolgical Instituut (RMI) Belgium - thomas.vergauwen@meteo.be
 
 Sara Top - Ghent University - sara.top@ugent.be
+
+Steven Caluwaerts - Royal Meteorolgical Instituut (RMI) Belgium / Ghent University - steven.caluwaerts@ugent.be
