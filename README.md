@@ -8,8 +8,16 @@ Output tabular data example:
 ![Alt text](examples/tabular_data.csv?raw=true "Title")
 ![Alt text](examples/tabular_data_example.png?raw=true "Title")
 
+# Installation
+All packages and the used python version are stored in a conda environment. To install this environment execute `conda env create -f environment.yml`.
+
 # Required software and running
-To run execute `main.py -[]`.   
+To run :
+* Check if the paths are correct in the `set_env_variables.sh`.
+* Activate conda environment: `conda activate cost_scripts_env`. (Make sure the environment is installed.) 
+* Then execute `source set_env_variables` and (in the same shell) `./main.py`.
+*(To read the log files: `tail logfile.log`.)
+
 
 # Required Geo maps
 For all these maps only the .tif file is required.
